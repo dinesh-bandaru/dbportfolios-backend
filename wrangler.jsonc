@@ -12,6 +12,14 @@
 	},
 	"compatibility_flags": [
 		"nodejs_compat"
+	],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "dbportfolios-db",
+			"database_id": "913720d1-0912-4e39-8049-ba725a3b7fe1",
+			"remote": true
+		}
 	]
 	/**
 	 * Smart Placement
