@@ -1,3 +1,4 @@
+// v1.1.0 — type safety, error handling, email normalization
 import { fromHono } from "chanfana";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
