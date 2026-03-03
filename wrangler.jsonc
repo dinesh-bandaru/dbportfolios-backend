@@ -20,10 +20,7 @@
 			"database_id": "913720d1-0912-4e39-8049-ba725a3b7fe1",
 			"remote": true
 		}
-	],
-	"vars": {
-		"CORS_ORIGIN": "https://dbportfolios-frontend.blr-bull.workers.dev"
-	}
+	]
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
