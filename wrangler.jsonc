@@ -20,7 +20,16 @@
 			"database_id": "913720d1-0912-4e39-8049-ba725a3b7fe1",
 			"remote": true
 		}
-	]
+	],
+	"r2_buckets": [
+		{
+			"binding": "TRANSCRIPTS",
+			"bucket_name": "dbportfolios-transcripts"
+		}
+	],
+	"ai": {
+		"binding": "AI"
+	}
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
