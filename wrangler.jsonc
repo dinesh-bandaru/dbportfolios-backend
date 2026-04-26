@@ -29,6 +29,13 @@
 	],
 	"ai": {
 		"binding": "AI"
+	},
+	"browser": {
+		"binding": "MYBROWSER",
+		"remote": true
+	},
+	"vars": {
+		"CLOUDFLARE_ACCOUNT_ID": ""
 	}
 	/**
 	 * Smart Placement

@@ -10,6 +10,8 @@ import { CourseStream } from "./endpoints/courseStream";
 import { CourseLessons } from "./endpoints/courseLessons";
 import { GenerateTranscript } from "./endpoints/generateTranscript";
 import { CourseChat } from "./endpoints/courseChat";
+import { priceLookupHandler } from "./endpoints/priceLookup";
+import { geoHandler } from "./endpoints/geo";
 
 type Env = {
 	DB: D1Database;
@@ -22,6 +24,8 @@ type Env = {
 	STREAM_CUSTOMER_CODE: string;
 	STREAM_ACCOUNT_ID: string;
 	STREAM_API_TOKEN: string;
+	CLOUDFLARE_ACCOUNT_ID: string;
+	CF_AI_API_TOKEN: string;
 };
 
 // Start a Hono app
@@ -82,10 +86,16 @@ openapi.post("/api/auth/signup", UserSignup);
 openapi.post("/api/auth/login", UserLogin);
 openapi.get("/api/market/indices", LiveIndices);
 
+// Geo-detection — returns country/currency/locale from Cloudflare CF headers
+app.get("/api/geo", geoHandler);
+
 // Protected endpoints (JWT required)
 openapi.get("/api/protected/course", CourseStream);
 openapi.get("/api/protected/course/lessons", CourseLessons);
 openapi.post("/api/protected/course/chat", CourseChat);
+
+// Price lookup — AI-powered, streams SSE logs + result
+app.post("/api/protected/course/price-lookup", priceLookupHandler);
 
 // Admin endpoints
 openapi.post("/api/admin/generate-transcript", GenerateTranscript);
